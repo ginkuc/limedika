@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Limedika", "Limedika\Limedika.csproj", "{1830FAC9-F4B5-467F-A0EC-F97EB2ADAEFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D42581D9-8AB5-4A2F-872D-AD6A8967F247}"
+	ProjectSection(SolutionItems) = preProject
+		klientai.json = klientai.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1830FAC9-F4B5-467F-A0EC-F97EB2ADAEFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1830FAC9-F4B5-467F-A0EC-F97EB2ADAEFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1830FAC9-F4B5-467F-A0EC-F97EB2ADAEFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1830FAC9-F4B5-467F-A0EC-F97EB2ADAEFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {626A61DB-15A5-4520-BC02-E4A55D30DC9C}
+	EndGlobalSection
+EndGlobal
