@@ -1,4 +1,6 @@
 using Limedika.Data;
+using Limedika.Services;
+using Limedika.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
@@ -23,6 +25,10 @@ namespace Limedika
         {
             services.AddDbContext<ApplicationDbContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("LimedikaConnection")));
+
+            services.AddTransient<ILocationService, LocationService>();
+            services.AddTransient<ILocationMapperService, LocationMapperService>();
+
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -70,7 +76,8 @@ namespace Limedika
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseAngularCliServer(npmScript: "start");
+                    spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+                    //spa.UseAngularCliServer(npmScript: "start");
                 }
             });
         }
