@@ -1,5 +1,8 @@
-﻿using Limedika.Services.Interfaces;
+﻿using Limedika.Data.Dtos;
+using Limedika.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Limedika.Controllers
@@ -21,6 +24,29 @@ namespace Limedika.Controllers
             var locations = await _locationService.GetAll();
 
             return Ok(locations);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ImportLocationRecords(ICollection<ParsedLocationDto> locationDtos)
+        {
+            await _locationService.Import(locationDtos);
+
+            return Ok();
+        }
+
+        [HttpPatch]
+        public async Task<IActionResult> UpdateLocationPostCodes()
+        {
+            try
+            {
+                await _locationService.UpdateLocationPostCodes();
+
+                return Ok();
+            }
+            catch (InvalidOperationException exception)
+            {
+                return BadRequest(exception.Message);
+            }
         }
     }
 }

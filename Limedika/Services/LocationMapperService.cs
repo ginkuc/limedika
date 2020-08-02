@@ -32,5 +32,17 @@ namespace Limedika.Services
                 PostCode = location.PostCode
             };
         }
+
+        public Location Map(ParsedLocationDto parsedLocationDto)
+        {
+            if (parsedLocationDto == null) throw new ArgumentNullException(nameof(parsedLocationDto));
+
+            return new Location
+            {
+                Address = parsedLocationDto.Address,
+                Name = parsedLocationDto.Name,
+                PostCode = parsedLocationDto.PostCode
+            };
+        }
     }
 }

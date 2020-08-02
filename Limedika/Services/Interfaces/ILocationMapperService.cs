@@ -7,5 +7,6 @@ namespace Limedika.Services.Interfaces
     {
         Location Map(LocationDto locationDto);
         LocationDto Map(Location location);
+        Location Map(ParsedLocationDto parsedLocationDto);
     }
 }
