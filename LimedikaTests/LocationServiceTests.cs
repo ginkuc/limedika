@@ -21,7 +21,7 @@ namespace LimedikaTests
             var testUtilities = new TestUtilities();
             _dbContext = testUtilities.Context;
 
-            var postCodeResolverMock = new Mock<IPostCodeResolver>();
+            var postCodeResolverMock = new Mock<PostItPostCodeResolver>();
             postCodeResolverMock.Setup(m => m.GetPostCode(It.IsAny<string>()))
                 .Returns(Task.FromResult("mockPostCode"));
 

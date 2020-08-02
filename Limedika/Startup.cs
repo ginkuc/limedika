@@ -1,3 +1,4 @@
+using System;
 using Limedika.Data;
 using Limedika.Services;
 using Limedika.Services.Interfaces;
@@ -28,7 +29,7 @@ namespace Limedika
 
             services.AddTransient<ILocationService, LocationService>();
             services.AddTransient<ILocationMapperService, LocationMapperService>();
-            services.AddTransient<IPostCodeResolver, PostItPostCodeResolver>();
+            services.AddHttpClient<PostItPostCodeResolver>();
 
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory

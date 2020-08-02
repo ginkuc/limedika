@@ -13,12 +13,12 @@ namespace Limedika.Services
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly ILocationMapperService _locationMapper;
-        private readonly IPostCodeResolver _postCodeResolver;
+        private readonly PostItPostCodeResolver _postCodeResolver;
 
         public LocationService(
             ApplicationDbContext dbContext,
             ILocationMapperService locationMapper,
-            IPostCodeResolver postCodeResolver
+            PostItPostCodeResolver postCodeResolver
             )
         {
             _dbContext = dbContext;
