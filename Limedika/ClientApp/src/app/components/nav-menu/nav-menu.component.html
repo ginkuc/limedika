@@ -5,6 +5,24 @@
     <div class="container">
       <a class="navbar-brand" [routerLink]="['/']">Limedika</a>
     </div>
-    <a [routerLink]="['/logs']">Logai</a>
+    <div
+        class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
+        [ngClass]="{ show: true }"
+      >
+        <ul class="navbar-nav flex-grow">
+          <li
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link text-dark" [routerLink]="['/']">Pradinis</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/logs']"
+              >Logai</a
+            >
+          </li>
+        </ul>
+      </div>    
   </nav>
 </header>
