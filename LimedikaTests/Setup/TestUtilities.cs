@@ -16,6 +16,7 @@ namespace LimedikaTests.Setup
                 {
                     _context = GetDatabase("TestDatabase");
                     LocationSeeder.SeedLocations(_context.Locations).Wait();
+                    LogSeeder.SeedLogs(_context.Logs).Wait();
 
                     _context.SaveChanges();
                 }

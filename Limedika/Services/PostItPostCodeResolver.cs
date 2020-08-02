@@ -1,4 +1,5 @@
 ﻿using Limedika.Data.Dtos.PostIt;
+using Limedika.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Linq;
@@ -9,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace Limedika.Services
 {
-    public class PostItPostCodeResolver
+    public class PostItPostCodeResolver : IPostCodeResolver
     {
-        public HttpClient Client { get; set; }
+        private HttpClient Client { get; set; }
         private readonly string _apiKey;
         private readonly JsonSerializerOptions _serializerOptions;
 
@@ -22,7 +23,7 @@ namespace Limedika.Services
         {
             _apiKey = configuration["PostItApi:Key"];
             client.BaseAddress = new Uri(configuration["PostItApi:Url"]);
-            //client.DefaultRequestHeaders.Add("User-Agent", "HttpClientFactory-Sample");
+
             client.DefaultRequestHeaders.Add("Accept", "application/json");
             
             _serializerOptions = new JsonSerializerOptions

@@ -29,9 +29,16 @@ namespace Limedika.Controllers
         [HttpPost]
         public async Task<IActionResult> ImportLocationRecords(ICollection<ParsedLocationDto> locationDtos)
         {
-            await _locationService.Import(locationDtos);
+            try
+            {
+                await _locationService.Import(locationDtos);
 
-            return Ok();
+                return Ok();
+            }
+            catch (Exception exception)
+            {
+                return BadRequest(exception.Message);
+            }
         }
 
         [HttpPatch]

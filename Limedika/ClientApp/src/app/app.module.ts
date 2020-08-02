@@ -7,14 +7,14 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { HomeComponent } from './components/home/home.component';
-import { LocationListComponent } from './components/location-list/location-list.component';
+import { LogsComponent } from './components/logs/logs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    LocationListComponent
+    LogsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -22,6 +22,7 @@ import { LocationListComponent } from './components/location-list/location-list.
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'logs', component: LogsComponent }
     ])
   ],
   providers: [],

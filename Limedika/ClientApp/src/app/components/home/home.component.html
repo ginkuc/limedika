@@ -7,16 +7,16 @@
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroupFileAddon01">Įkelti JSON dokumentą:</span>
+    <span class="input-group-text" id="inputGroupFileAddon01">Importuoti klientus:</span>
   </div>
   <div class="custom-file">
     <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"
       (change)="onFileChanged($event)" accept=".json" 
     >
-    <label class="custom-file-label" for="inputGroupFile01">{{fileName === null ? 'Pasirinkite dokumentą' : fileName}}</label>
+    <label class="custom-file-label" for="inputGroupFile01">{{fileName === null ? 'Pasirinkite JSON dokumentą' : fileName}}</label>
   </div>
 </div>
-<h2>Klientai</h2>
+<h2>Klientų sąrašas</h2>
 <button type="button" class="btn btn-secondary mr-1" (click)="updatePostCodesClicked()">Atnaujinti pašto indeksus</button>
 <table class='table table-striped' *ngIf="clientLocations">
   <thead>

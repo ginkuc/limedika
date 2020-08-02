@@ -6,6 +6,7 @@ namespace Limedika.Data
     public class ApplicationDbContext : DbContext
     {
         public DbSet<Location> Locations { get; set; }
+        public DbSet<Log> Logs { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {

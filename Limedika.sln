@@ -7,7 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Limedika", "Limedika\Limedi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D42581D9-8AB5-4A2F-872D-AD6A8967F247}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 		klientai.json = klientai.json
+		Limedika.sln.DotSettings = Limedika.sln.DotSettings
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LimedikaTests", "LimedikaTests\LimedikaTests.csproj", "{F90D5503-F199-478F-9CA6-1CFD87E8EA59}"

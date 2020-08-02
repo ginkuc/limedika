@@ -1,4 +1,3 @@
-using System;
 using Limedika.Data;
 using Limedika.Services;
 using Limedika.Services.Interfaces;
@@ -29,8 +28,9 @@ namespace Limedika
 
             services.AddTransient<ILocationService, LocationService>();
             services.AddTransient<ILocationMapperService, LocationMapperService>();
-            services.AddHttpClient<PostItPostCodeResolver>();
-
+            services.AddTransient<ILogService, LogService>();
+            services.AddHttpClient<IPostCodeResolver, PostItPostCodeResolver>();
+            
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -78,8 +78,8 @@ namespace Limedika
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
-                    //spa.UseAngularCliServer(npmScript: "start");
+                    //spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+                    spa.UseAngularCliServer(npmScript: "start");
                 }
             });
         }

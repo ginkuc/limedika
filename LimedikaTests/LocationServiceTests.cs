@@ -21,14 +21,15 @@ namespace LimedikaTests
             var testUtilities = new TestUtilities();
             _dbContext = testUtilities.Context;
 
-            var postCodeResolverMock = new Mock<PostItPostCodeResolver>();
+            var postCodeResolverMock = new Mock<IPostCodeResolver>();
             postCodeResolverMock.Setup(m => m.GetPostCode(It.IsAny<string>()))
                 .Returns(Task.FromResult("mockPostCode"));
 
             _locationService = new LocationService(
                 _dbContext,
                 new LocationMapperService(),
-                postCodeResolverMock.Object
+                postCodeResolverMock.Object,
+                new Mock<ILogService>().Object
                 );    
         }
 
